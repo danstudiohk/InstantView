@@ -1,0 +1,890 @@
+
+html,body {
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Ubuntu', sans-serif;
+	color:#000;
+	margin: 0 auto;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none;
+	-webkit-transition: all 0.3s;
+	width: 100%;
+	height:800px;
+	background-color: #FFF;
+}
+
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+hr{
+	margin-top:10px;
+	margint-right:10px;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left:0;
+	height: 100vh;
+	z-index: 9999;
+	background: #272F38;
+	color: #fff;
+	transition: all 0.3s;
+	padding-top: 10px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #272F38;
+}
+
+
+#sidebar ul p {
+    color: #fff;
+    padding: 5px;
+}
+
+#sidebar ul li a {
+	padding: 8px;
+	letter-spacing: 0px;
+	padding-left: 30px;
+	font-size: 15px;
+	display: block;
+}	
+#sidebar ul li a:hover {
+	color: #FACF00;
+	background: #666;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+	color: #fff;
+	background-color:#444;
+	border-left:solid 10px #FACF00;
+	padding-left: 15px;
+
+}
+
+#sidebar ul p.sidebar-title {
+	color: #888;
+	font-size: 15px;
+	letter-spacing: 2px;
+	font-weight:100;
+	padding-left:20px;
+	padding-top:10px;
+	margin-bottom:0px;
+}
+
+
+#sidebar ul p.sidebar-subtitle{
+	color: #888;
+	font-size: 15px;
+	letter-spacing: 2px;
+	font-weight:100;
+	padding-top:5px;
+	padding-bottom:0px;
+	padding-left:20px;
+	margin-bottom:0px;
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+.sidebar-donate{
+	padding: 10px;
+	padding-left: 25px;
+	display: block;
+	width:120px;
+	cursor: pointer;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+	width: calc(100% - 250px);
+	min-height: 100vh;
+	transition: all 0.3s;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right:0px;
+	margin-left:250px;
+	padding-top:80px;
+
+}
+
+#content.active {
+	width:100%;
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#main {
+	padding-left:10%;
+	padding-right:10%;
+}
+
+#content .navbar{
+	margin-left:250px;
+}
+
+#content.active .navbar{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+.pagename{
+	font-size:32px;
+	padding:10px 15px 0px;
+	font-weight:100;
+	text-align:left;
+}
+
+.lastupdate{
+	font-size:15px;
+	padding:0px 15px 10px;
+	font-weight:100;
+	text-align:left;
+}
+
+
+
+/* ---------------------------------------------------
+    NAV BAR STYLE
+----------------------------------------------------- */
+
+.navbar {
+	width:100%;
+	border-radius: 0;
+	margin-bottom: 0px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s;
+	padding:0;
+	top: 0;
+	left:0;
+	display:block;
+}
+
+
+.navbar  .container-fluid{
+	background: white;
+	border-top: solid 5px #FACF00;
+	border-bottom: solid 2px #E6E6E6;
+	height:70px;
+}
+
+.navbar-header{
+	width:100%;
+}
+
+.navbar-AMLlogo{
+	border: none;
+	width:120px;
+	float:left;
+}
+
+.navbar-btn {
+	box-shadow: none;
+	outline: none !important;
+	border: none;
+	font-size:30px;
+	background: #FFFFFF no-repeat left center;
+	margin-right:10px;
+	margin-left:10px;
+	color:#000;
+	float:left;
+	cursor: pointer;
+}
+
+.navbar-btn:active,.navbar-btn:focus{
+	box-shadow:none;
+}
+
+
+.navbar-hamburger-img{
+	padding-top:10px;
+	padding-bottom:10px;
+	width:30px;
+}
+
+
+/* ---------------------------------------------------
+    Card STYLE
+----------------------------------------------------- */
+.row{
+	padding-left:10px;
+	padding-right:10px;
+	margin:0;
+
+}
+
+.card-container {
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:30px;
+}
+
+.card{
+	border-left:solid 15px #FACF00;
+	background-color:#FFFFFF;
+	border-radius: .50rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	cursor: pointer;
+}
+
+
+.card-body{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+.card-title{
+	margin-bottom:5px;
+}
+
+.card-body-text{
+	padding:0;
+}
+
+
+.card-pic{
+	margin-left:10px;
+	width:20px;
+	padding-bottom:10px;
+}
+
+.card-text{
+	padding:0;
+}
+
+.card-text-caption{
+	color:grey;
+	padding-top:10px;
+	font-size:12px;
+	opacity:0.75;
+}
+
+.card-text-caption-timegone{
+	color:grey;
+	padding-top:0px;
+	font-size:8px;
+	opacity:0.75;
+}
+
+.card-text-caption-YTD{
+	font-size:15px;
+	padding-top:20px;
+}
+
+.card-text-YTD-figures{
+	font-size:36px;
+}
+
+.card-text-figures{
+	font-size:20px;
+	padding-left:10px;
+}
+
+
+.card-comment {
+	font-size:15px;
+	transition: all 0.3s;
+}
+
+.card-caret-bottom{
+	text-align:right;
+}
+
+.rotated-card-caret-bottom {
+	transition-duration: 0.8s;
+	transition-property: transform;
+	transform: rotate(180deg);
+}
+
+.tab-change{
+	transform: rotate(0deg);
+	transition-duration: 0.3s;
+}
+
+.rotated-image {
+	transition-duration: 0.3s;
+	transition-property: transform;
+	transform: rotate(180deg);
+}
+
+
+/* ---------------------------------------------------
+    Input STYLE
+----------------------------------------------------- */
+.btnMktGroup{
+	left:clear;
+	margin-left:10px;
+	padding:10px 0px 10px 0px;
+	width:100%;
+	float:left;
+}
+
+.btnMkt{
+	letter-spacing: 1px;
+	float:left;
+	display:block;
+	width:10.5%;
+	text-align: center;
+	font-size:14px;
+	padding:0px 0px 10px 0px;
+	cursor: pointer;
+}
+
+.btnMkt.active {
+	border-bottom:solid 3px #FACF00;
+}
+
+.filterArea{
+	margin:0;
+	padding:10px 0px 10px 0px;
+}
+.row-filter{
+	margin:0;
+	padding:0;
+}
+
+
+select {
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background: url("../img/down-arrow.png") no-repeat;
+	background-position: right center;
+	background-size: 10px 10px;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+}
+
+.filter-container{
+	margin:0;
+	padding:0;
+}
+
+.Filter{
+	margin:0px 0px 10px 10px;
+	padding:0px 5px 5px 0px;
+	border-top:#fff;
+	border-left:#fff;
+	border-right:#fff;
+	border-bottom:solid 3px #FACF00;
+	font-size:14px;
+	outline:none;
+	cursor: pointer;
+	width:80%;
+}
+
+
+
+.tab-row{
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+}
+
+.fade{
+	display:block;
+	opacity: 100;
+}
+
+.tab-img{
+	width:30px;
+}
+
+.nav-tabs {
+	border:none;
+	outline:none;
+	padding-left:10px;
+}
+
+.nav-tabs .nav-link{
+	outline:none;
+	border:none;
+	border-bottom: solid 3px #FFFFFF;
+}
+.nav-tabs .nav-link[aria-selected="true"]   {
+	outline:none;
+	border-bottom: solid 3px #FACF00;
+}
+
+
+.radiobtn {
+	width:150px;
+	display: block;
+	position: relative;
+	padding-top:10px;
+	padding-left: 35px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.radiobtn input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.radio-checkmark {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #E9ECEF;
+	border-radius: 50%;
+}
+.radiobtn input:checked ~ .radio-checkmark {
+    background-color: #FACF00;
+}
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radiobtn input:checked ~ .radio-checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiobtn .radio-checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.checkbox-container {
+	width:150px;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-top: 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.pillar-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #E9ECEF;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .pillar-checkmark {
+    background-color: #E9ECEF;
+}
+
+/* When the checkbox is checked, add a yellow background */
+.checkbox-container input:checked ~ .pillar-checkmark {
+    background-color: #FACF00;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.pillar-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .pillar-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .pillar-checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.tab-change{
+	width: 20px;
+	padding-top: 5px;
+	margin-top: 10px;
+	margin-right: 20px;
+	float:right;
+}
+
+
+/* ---------------------------------------------------
+    Chart Element	
+----------------------------------------------------- */
+
+.tab-pane{
+	padding:0;
+}
+
+.Chartdiv{
+	clear:left;
+	width:100%;
+	margin-bottom:30px;
+	
+}
+
+.ChartTitle{
+	display:inline-block;
+	color:#000000;
+	height:30px;
+	font-size: 12px;
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
+	padding-left:10px;
+	border-left:12px solid #FACF00;
+}
+
+.svgLine_tooltip{
+	position: absolute;			
+	text-align: center;			
+	width: 120px;					
+	height: 80px;					
+	padding: 2px;		
+	font-size: 12px;	
+	color: black;
+	background: white;	
+	border: 2px solid #FACF00;		
+	border-radius: 8px;
+	pointer-events: none;	
+	opacity: 0;
+
+}
+
+.svgArea_tooltip{	
+	position: absolute;		
+	text-align: left;			
+	width: 200px;					
+	height: 30px;
+	padding-top: 5px;
+	padding-buttom: 5px;	
+	padding-left: 10px;		
+	font-size: 12px;	
+	color: black;
+	background: transparent;		
+	pointer-events: none;
+	opacity: 0;
+}
+.svgArea_tooltip::after{	
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-top: -8px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent black transparent transparent;
+
+}
+
+#legend{
+	margin-top:10px;
+	margin-left:10px;
+}
+
+.imgACTBGTLYLegend{
+	width: 200px;
+	margin-top:10px;
+	margin-left:10px;
+}
+
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #222;
+	stroke-width: 2px;
+	opacity: 0.1;
+	shape-rendering: crispEdges;
+}
+
+.tick line{
+	stroke-width: 2;
+	stroke: #222;
+	opacity: 0.1;
+}
+
+.table{
+	border-top:1px solid grey;
+	text-align:center;
+	font-size:12px;
+}
+
+.table th{
+	font-size:10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.table td{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.table-responsive-sm{
+	padding:2px;
+}
+
+#CaptionYTD{
+	padding-top: 10px;
+}
+
+.table-top-row{
+	padding-bottom: 10px;
+}
+
+.figred {
+	color: #E20000;
+}
+
+.figgreen {
+	color: #00B050;
+}
+
+#progresschart{
+	width:100px;
+}
+
+
+.remarks{
+	height:30px;
+	font-size: 12px;
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
+	padding-left:10px;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES	
+----------------------------------------------------- */
+/*Tablet*/
+@media (max-width: 992px) {
+    #sidebar.active {
+		margin-right:-250px;
+    }
+    #content {
+		width:100%;
+		margin-left:250px;
+		margin-right:-250px;
+		padding-top:80px;
+    }
+	#main {
+		padding-left:5%;
+		padding-right:5%;
+	}
+	
+	.card-container {
+		padding-left:15px;
+		padding-right:15px;
+		padding-bottom:30px;
+	}
+	.tab-row{
+		display:block;
+	}
+	.fade.show{
+		opacity:100;
+		display:block;
+	}
+	.fade{
+		opacity:0;
+		display:none;
+	}
+	#progresschart{
+		width:100px;
+	}
+
+
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+	
+	#sidebar {
+		left:auto;
+		right:0;
+	}
+	#sidebar.active {
+		margin-right:-250px;
+	}
+	#content {
+		margin-left:-250px;
+		margin-right:250px;
+		padding-top:80px;
+	}
+	#main {
+		padding-left:0;
+		padding-right:0;
+	}
+	#content .navbar {
+		margin-left:-250px;
+		margin-right:250px;
+	}
+	.navbar-btn {
+		float:right;
+		margin-right:10px;
+	}
+	.navbar-AMLlogo{
+		margin-left:20px;
+	}
+
+	
+	.card-container {
+		padding-left:40px;
+		padding-right:40px;
+		padding-bottom:30px;
+	}
+	
+	#TabContent{
+		padding-left:10%;
+		padding-right:10%;
+		
+	}
+	
+	.tab-row{
+		display:block;
+	}
+	.fade.show{
+		opacity:100;
+		display:block;
+	}
+	.fade{
+		opacity:0;
+		display:none;
+	}
+	
+	#progresschart{
+	width:100px;
+	}
+
+
+}
+
+
+@media (max-width: 576px) {
+	
+	#sidebar {
+		left:auto;
+		right:0;
+	}
+	#sidebar.active {
+		margin-right:-250px;
+	}
+	#content {
+		margin-left:-250px;
+		margin-right:250px;
+		padding-top:80px;
+	}
+	#content .navbar {
+		margin-left:-250px;
+		margin-right:250px;
+	}
+	.navbar-btn {
+		float:right;
+		margin-right:10px;
+	}
+	.navbar-AMLlogo{
+		margin-left:20px;
+	}
+
+	.card-container {
+		padding-left:15px;
+		padding-right:15px;
+		padding-bottom:30px;
+	}
+	#TabContent{
+		padding-left:0;
+		padding-right:0;
+		
+	}
+	
+	.tab-row{
+		display:block;
+	}
+	.fade.show{
+		opacity:100;
+		display:block;
+	}
+	.fade{
+		opacity:0;
+		display:none;
+	}
+	.card-title{
+		font-size:14px;
+	}
+	
+	.card-text-YTD-figures{
+		font-size:32px;	
+	}
+
+
+
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="cleartype" content="on">
+		<meta name="MobileOptimized" content="320">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		
+     <title>AML Mobile Web</title>
+
+     <!-- Bootstrap CSS CDN -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+		<link rel="stylesheet" href="css/dist/bootstrap.min.css">
+     <!-- Our Custom CSS -->
+		<link rel="stylesheet" href="css/style_rwd.css">
+	
+
+    </head>
+    <body>
+        <div class="wrapper">
+			<!--**********************************************************************************************************************-->
+			<!-- Sidebar -->
+			<nav id="sidebar" class="active">
+				<ul class="list-unstyled">
+					<p class="sidebar-title">Instant View</p>
+						<li><a href="index.html">Home</a></li>
+					<p class="sidebar-subtitle">Membership</p>
+						<li><a href="Total Member.html">Total Member</a></li>
+						<li><a href="New Member.html">New Member</a></li>
+						<li><a href="Active Member.html">Active Member</a></li>
+					<p class="sidebar-subtitle">Accrual</p>
+						<li><a href="Air Accrual.html">Air Accrual</a></li>
+						<li><a href="Non Air Accrual.html">Non Air Accrual</a></li>
+						<li><a href="Other Accrual.html">Other Accrual</a></li>
+					<p class="sidebar-subtitle">Redemption</p>
+						<li><a href="Air Redemption.html">Air Redemption</a></li>
+						<li><a href="Non Air Redemption.html">Non Air Redemption</a></li>
+					<p class="sidebar-title">Support</p>
+						<li class="active"><a href="ChangeLog.html">ChangeLog</a></li>
+						<li><a href="mailto:DL_AML_Reporting_and_Insights@cathaypacific.com" target="_top">Email Us</a></li>
+						<li><img class="sidebar-donate" src="img/donate.png" onclick="donate()"></li>
+				</ul>
+			</nav>
+			<!--**********************************************************************************************************************-->
+			<!-- Page Content -->
+			<div id="content" class="active">
+			<!--**********************************************************************************************************************-->
+			<!-- Nav Top Bar -->
+				<nav class="navbar fixed-top">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<img id="sidebarCollapse" class="navbar-btn navbar-hamburger-img" src="img/icon/hamburger.png">
+							<img class="navbar-AMLlogo" src="img/logo-asia-miles-new.png">
+						</div>
+					</div>
+				</nav>	
+			<!--**********************************************************************************************************************-->
+			<!-- pagename and last update date -->
+				<div id="main" class="main">
+					<div class="row">
+						<div class="pagename col-md-12">Change Log</div>
+						<div id="lastupdate" class="lastupdate"></div>
+					</div>
+			<!--**********************************************************************************************************************-->
+			<!-- Card Area -->	
+			<!-- Member Row -->
+					<div class="row">
+						<!-- Total Member -->	
+						<div id="CardTotalMember" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Totalmemb" aria-expanded="false" aria-controls="comment-Totalmemb">
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">v0</h6>
+									<div class="row card-body-text">
+										<h6 class="card-body-text">
+										Hi, I am Daniel From Reporting Team </br>
+										This is fmsdfsdfsd.
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+
+	<!--**********************************************************************************************************************-->
+	<!-- jQuery CDN
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/jquery-3.3.1.min.js"></script>
+	<!-- jQuery Custom Scroller CDN 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/popper.min.js"></script>
+	<!-- Bootstrap Js CDN
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	   
+	-->
+	<script src="js/dist/bootstrap.min.js"></script>
+	<!-- D3 !v3.5-->
+	<script src="js/dist/d3.v3.5.min.js"></script>
+	<!--**********************************************************************************************************************-->
+	
+	<!-- Own Working Js -->	
+	<script src="js/parameter.js"></script>
+	<script src="js/index.js"></script>
+	
+	
+	<script type="text/javascript">
+		
+	   $(document).ready(function () {
+					//Click event on navbar-hamburger-img
+					$('#main').on('click', function () {
+						$('#sidebar, #content').addClass('active');
+					});
+					$('#sidebarCollapse').on('click', function () {
+						$('#sidebar, #content').toggleClass('active');
+					});
+					//Click event on card
+					//$('#CardTotalMember').on('click',function () {
+					//		$('#CardTotalMembercaret').toggleClass('rotated-card-caret-bottom');
+					//	});
+				});
+				
+			function donate() {
+				alert("Thank you for your support!!\nWe have deducted 10,000 Miles from your Asia Miles Account.");
+				alert("Just Kidding!!\nTreat us to lunch is enough.");
+			};
+				
+				
+	
+	</script>
+
+    </body>
+</html>

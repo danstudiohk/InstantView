@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="cleartype" content="on">
+		<meta name="MobileOptimized" content="320">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		
+     <title>AML Mobile Web</title>
+
+     <!-- Bootstrap CSS CDN -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+		<link rel="stylesheet" href="css/dist/bootstrap.min.css">
+     <!-- Our Custom CSS -->
+		<link rel="stylesheet" href="css/style_rwd.css">
+	
+
+    </head>
+    <body>
+        <div class="wrapper">
+			<!--**********************************************************************************************************************-->
+			<!-- Sidebar -->
+			<nav id="sidebar" class="active">
+				<ul class="list-unstyled">
+					<p class="sidebar-title">Instant View</p>
+						<li class="active"><a href="index.html">Home</a></li>
+					<p class="sidebar-subtitle">Membership</p>
+						<li><a href="Total Member.html">Total Member</a></li>
+						<li><a href="New Member.html">New Member</a></li>
+						<li><a href="Active Member.html">Active Member</a></li>
+					<p class="sidebar-subtitle">Accrual</p>
+						<li><a href="Air Accrual.html">Air Accrual</a></li>
+						<li><a href="Non Air Accrual.html">Non Air Accrual</a></li>
+						<li><a href="Other Accrual.html">Other Accrual</a></li>
+					<p class="sidebar-subtitle">Redemption</p>
+						<li><a href="Air Redemption.html">Air Redemption</a></li>
+						<li><a href="Non Air Redemption.html">Non Air Redemption</a></li>
+					<p class="sidebar-title">Support</p>
+						<li><a href="ChangeLog.html">ChangeLog</a></li>
+						<li><a href="mailto:DL_AML_Reporting_and_Insights@cathaypacific.com" target="_top">Email Us</a></li>
+						<li><img class="sidebar-donate" src="img/donate.png" onclick="donate()"></li>
+				</ul>
+			</nav>
+			<!--**********************************************************************************************************************-->
+			<!-- Page Content -->
+			<div id="content" class="active">
+			<!--**********************************************************************************************************************-->
+			<!-- Nav Top Bar -->
+				<nav class="navbar fixed-top">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<img id="sidebarCollapse" class="navbar-btn navbar-hamburger-img" src="img/icon/hamburger.png">
+							<img class="navbar-AMLlogo" src="img/logo-asia-miles-new.png">
+						</div>
+					</div>
+				</nav>	
+			<!--**********************************************************************************************************************-->
+			<!-- pagename and last update date -->
+				<div id="main" class="main">
+					<div class="row">
+						<div id="lastupdate" class="lastupdate"></div>
+					</div>
+			<!--**********************************************************************************************************************-->
+			<!-- Card Area -->	
+			<!-- Member Row -->
+					<div class="row">
+						<!-- Total Member -->	
+						<div id="CardTotalMember" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Totalmemb" aria-expanded="false" aria-controls="comment-Totalmemb">
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Total Member<img class="card-pic" src="img/icon/member.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardTotalMemberYTD" class="card-text-YTD-figures" ></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">% Achieved</div>
+												<div id="CardTotalMembervsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardTotalMembervsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						  <!-- New Member -->
+						<div id="CardNewMember" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Newmemb" aria-expanded="false" aria-controls="comment-Newmemb">  
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">New Member<img class="card-pic" src="img/icon/member.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardNewMemberYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">% Achieved</div>
+												<div id="CardNewMembervsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardNewMembervsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								  </div>
+							  </div>
+						  </div>
+
+					<!-- Active Member -->
+						<div id="CardActiveMember" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Activememb" aria-expanded="false" aria-controls="comment-Activememb">  
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Active Member<img class="card-pic" src="img/icon/member.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardActiveMemberYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">% Achieved</div>
+												<div id="CardActiveMembervsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardActiveMembervsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								  </div>
+							  </div>
+						  </div>
+					</div>
+				<!-- Accrual Row -->
+					<div class="row">
+						<!-- Air Accrual -->	  
+						<div id="CardAirAccrual" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Airaccrual" aria-expanded="false" aria-controls="comment-Airaccrual">  
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Air Accrual<img class="card-pic" src="img/icon/milesdollarsign.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardAirAccrualYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">vs BGT</div>
+												<div id="CardAirAccrualvsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardAirAccrualvsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Non Air Accrual -->	
+						<div id="CardNonAirAccrual" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Nonairaccrual" aria-expanded="false" aria-controls="comment-Nonairaccrual">    
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Non Air Accrual<img class="card-pic" src="img/icon/milesdollarsign.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardNonAirAccrualYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">vs BGT</div>
+												<div id="CardNonAirAccrualvsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardNonAirAccrualvsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Other Accrual -->	
+						<div id="CardOtherAccrual" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Otheraccrual" aria-expanded="false" aria-controls="comment-Otheraccrual">  
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Other Accrual<img class="card-pic" src="img/icon/milesdollarsign.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardOtherAccrualYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">vs BGT</div>
+												<div id="CardOtherAccrualvsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardOtherAccrualvsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- Redemption Row -->
+					<div class="row">
+						<!-- Air Redemption -->	
+						<div id="CardAirRedemption" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Airredemption" aria-expanded="false" aria-controls="comment-Airredemption">  
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Air Redemption<img class="card-pic" src="img/icon/milesdollarsign.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardAirRedemptionYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">vs BGT</div>
+												<div id="CardAirRedemptionvsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardAirRedemptionvsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Non Air Redemption -->	
+						<div id="CardNonAirRedemption" class="card-container col-md-6 col-lg-6" data-toggle="collapse" data-target="#comment-Nonairredemption" aria-expanded="false" aria-controls="comment-Nonairredemption">  
+							<div class="card">
+								  <div class="card-body">
+									<h6 class="card-title">Non Air Redemption<img class="card-pic" src="img/icon/milesdollarsign.png"></h6>
+									<div class="row card-body-text">
+										<div class="card-text col-8">
+												<div class="card-text-caption card-text-caption-YTD">YTD</div>
+												<div id="CardNonAirRedemptionYTD" class="card-text-YTD-figures"></div>
+											</div>
+										<div class="card-text col-4">
+											<div>
+												<div class="card-text-caption">vs BGT</div>
+												<div id="CardNonAirRedemptionvsBGT" class="card-text-figures"></div>
+											</div>
+											<div>
+												<div class="card-text-caption">vs LY</div>
+												<div id="CardNonAirRedemptionvsLY" class="card-text-figures"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+				
+			</div>
+	<!--**********************************************************************************************************************-->
+	<!-- jQuery CDN
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/jquery-3.3.1.min.js"></script>
+	<!-- jQuery Custom Scroller CDN 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/popper.min.js"></script>
+	<!-- Bootstrap Js CDN
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	   
+	-->
+	<script src="js/dist/bootstrap.min.js"></script>
+	<!-- D3 !v3.5-->
+	<script src="js/dist/d3.v3.5.min.js"></script>
+	<!--**********************************************************************************************************************-->
+	
+	<!-- Own Working Js -->	
+	<script src="js/parameter.js"></script>
+	<script src="js/index.js"></script>
+	
+	
+	<script type="text/javascript">
+		
+	   $(document).ready(function () {
+					//Click event on navbar-hamburger-img
+					$('#main').on('click', function () {
+						$('#sidebar, #content').addClass('active');
+					});
+					$('#sidebarCollapse').on('click', function () {
+						$('#sidebar, #content').toggleClass('active');
+					});
+				
+				});
+				
+			function donate() {
+				alert("Thank you for your support!!\nWe have deducted 10,000 Miles from your Asia Miles Account.");
+				alert("Just Kidding!!\nTreat us to lunch is enough.");
+			};
+			
+	</script>
+	
+    </body>
+</html>

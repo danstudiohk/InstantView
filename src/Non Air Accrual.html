@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="cleartype" content="on">
+		<meta name="MobileOptimized" content="320">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+		<title>AML Mobile Web</title>
+
+		<!-- Bootstrap CSS CDN -->
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+		<link rel="stylesheet" href="css/dist/bootstrap.min.css">
+		<!-- Our Custom CSS -->
+		<link rel="stylesheet" href="css/style_rwd.css">
+
+    </head>
+    <body>
+        <div class="wrapper">
+			<!--**********************************************************************************************************************-->
+			<!-- Sidebar -->
+			<nav id="sidebar" class="active">
+				<ul class="list-unstyled">
+					<p class="sidebar-title">Instant View</p>
+						<li><a href="index.html">Home</a></li>
+					<p class="sidebar-subtitle">Membership</p>
+						<li><a href="Total Member.html">Total Member</a></li>
+						<li><a href="New Member.html">New Member</a></li>
+						<li><a href="Active Member.html">Active Member</a></li>
+					<p class="sidebar-subtitle">Accrual</p>
+						<li><a href="Air Accrual.html">Air Accrual</a></li>
+						<li class="active"><a href="Non Air Accrual.html">Non Air Accrual</a></li>
+						<li><a href="Other Accrual.html">Other Accrual</a></li>
+					<p class="sidebar-subtitle">Redemption</p>
+						<li><a href="Air Redemption.html">Air Redemption</a></li>
+						<li><a href="Non Air Redemption.html">Non Air Redemption</a></li>
+					<p class="sidebar-title">Support</p>
+						<li><a href="ChangeLog.html">ChangeLog</a></li>
+						<li><a href="mailto:DL_AML_Reporting_and_Insights@cathaypacific.com" target="_top">Email Us</a></li>
+				</ul>
+			</nav>
+
+		<!--**********************************************************************************************************************-->
+		<!-- Page Content -->
+		<div id="content" class="active">
+			<!--**********************************************************************************************************************-->
+			<!-- Nav Top Bar -->
+			<nav class="navbar fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<img id="sidebarCollapse" class="navbar-btn navbar-hamburger-img" src="img/icon/hamburger.png">
+						<img class="navbar-AMLlogo" src="img/logo-asia-miles-new.png">
+					</div>
+				</div>
+			</nav>
+			<!--**********************************************************************************************************************-->
+			<!-- pagename and last update date -->
+			<div id="main" class="main">
+				<div class="row">
+					<div class="pagename col-md-12">Non Air Accrual</div>
+					<div id="lastupdate" class="lastupdate"></div>
+				</div>
+			<!--**********************************************************************************************************************-->
+			<!-- Chart selection -->
+			<div class="row tab-row">
+				<ul class="nav nav-tabs col-md-6" id="myTab" role="tablist">
+					<li class="nav-item"> <a class="nav-link active" id="table-tab" data-toggle="tab" href="#table" role="tab" aria-controls="table" aria-selected="true"> <img class="tab-img" src="img/icon/datatable.png"> </a> </li>
+					<li class="nav-item"> <a class="nav-link" id="line-tab" data-toggle="tab" href="#line" role="tab" aria-controls="line" aria-selected="false"> <img class="tab-img" src="img/icon/linechart.png"> </a> </li>
+					<li class="nav-item"> <a class="nav-link" id="area-tab" data-toggle="tab" href="#area" role="tab" aria-controls="area" aria-selected="false"> <img class="tab-img" src="img/icon/areachart.png"> </a> </li>
+					<li class="nav-item"> <a class="nav-link" id="pie-tab" data-toggle="tab" href="#pie" role="tab" aria-controls="pie" aria-selected="false"> <img class="tab-img" src="img/icon/piechart.png"> </a> </li>				</ul>
+			</div>
+			<!--**********************************************************************************************************************-->
+				<div id="radiobtngroup" class="row">
+						<label class="radiobtn">By Market
+						  <input id="radioMarket" type="radio" checked="checked" name="radio" onclick="showbtnMktGroup()">
+						  <span class="radio-checkmark"></span>
+						</label>
+						<label class="radiobtn">By Pillar
+						  <input id="radioPillar" type="radio" name="radio" onclick="showPillar()">
+						  <span class="radio-checkmark"></span>
+						</label>
+					</div>
+			<!--Key Market button Group-->
+				<div class="row">
+					<div id="btnMktGroup" class="btnMktGroup col-md-6">
+						<div id="btnALL" class="btnMkt active" value="All Markets" onClick="ChangeMKT(this)">ALL</div>
+						<div id="btnHK" class="btnMkt" value="Hong Kong" onClick="ChangeMKT(this)">HK</div>
+						<div id="btnMO" class="btnMkt" value="Macau" onClick="ChangeMKT(this)">MO</div>
+						<div id="btnTW" class="btnMkt" value="Taiwan" onClick="ChangeMKT(this)">TW</div>
+						<div id="btnPRD" class="btnMkt" value="PRD" onClick="ChangeMKT(this)">PRD</div>
+						<div id="btnPRC" class="btnMkt" value="PRC" onClick="ChangeMKT(this)">PRC</div>
+						<div id="btnNA" class="btnMkt" value="North America" onClick="ChangeMKT(this)">NA</div>
+						<div id="btnSEA" class="btnMkt" value="Southeast Asia" onClick="ChangeMKT(this)">SEA</div>
+						<div id="btnOTH" class="btnMkt" value="Others" onClick="ChangeMKT(this)">OTH</div>
+					</div>
+				</div>
+			<!--**********************************************************************************************************************-->
+
+				
+			<!--Filters Area -->
+				<div class="row">
+					<form class="filterArea col-md-6">
+						<div class="row row-filter">
+							<!--Carriers -->
+							<div id="Pillardiv" class="filter-container col-6">
+								<select id="Pillar" class="Filter" onchange="Execute()" >
+									<option value="All Pillars">All Pillars</option>
+									<option value="Finance">=== Finance ===</option>
+									<option value="Cobrand Cards">Cobrand card</option>
+									<option value="Conversion Cards">Conversion Card</option>
+									<option value="Banking">Banking</option>
+									<option value="Non-Finance">=== Non-Finance===</option>
+									<option value="Insurance">Insurance</option>
+									<option value="Hotel">Hotel</option>
+									<option value="Travel">Travel</option>
+									<option value="Car Rental">Car Rental</option>
+									<option value="Retail">Retail</option>
+									<option value="Dining">Dining</option>
+									<option value="Banqueting">Banqueting</option>
+									<option value="Prof Svcs">Prof Service</option>
+									<option value="Telecoms">Telecoms</option>
+									<option value="Ad-hoc partners">Ad-hoc partners</option>
+								</select>
+							</div>
+							<div id="PillarFinornonFindiv" class="filter-container col-6">
+								<select id="PillarFinornonFin" class="Filter" onchange="Execute()" >
+									<option value="All Pillars">All Pillars</option>
+									<option value="Finance">Finance</option>
+									<option value="Non-Finance">Non-Finance</option>
+								</select>
+							</div>
+							<!--Metrics -->
+							<div class="filter-container col-6">
+								<select id="Metrics" class="Filter" onchange="Execute()" >
+									<option value="Miles">Miles</option>
+									<option value="Sales">Mileages Sales ($HK)</option>
+									<option value="Rev">Marketing Revenue ($HK)</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			<!--**********************************************************************************************************************-->
+			<!--Chart Area -->
+				<div class="tab-content" id="TabContent">
+					<div class="row">
+						<div class="tab-pane fade show active col-lg-6" id="table" role="tabpanel" aria-labelledby="table-tab">
+							<div class="row table-top-row">
+								<div class="col-4">
+										<div id="CaptionYTD" class="card-text-caption card-text-caption-YTD">YTD</div>
+										<div id="FigureYTD" class="card-text-YTD-figures"></div>
+									</div>
+								<div class="col-4">
+									<div>
+										<div class="card-text-caption">vs BGT</div>
+										<div id="FigureVsBGT" class="card-text-figures"></div>
+									</div>
+									<div>
+										<div class="card-text-caption">vs LY</div>
+										<div id="FigureVsLY" class="card-text-figures"></div>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="card-text-caption">% of 2018 BGT</div>
+									<div id="timegone" class="card-text-caption-timegone"></div>
+									<svg id="progresschart" class="progresschart" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50"></svg>
+								</div>
+							</div>
+								<div id="table-responsive" class="table-responsive-sm"></div>
+						</div>
+
+						<div class="tab-pane fade col-lg-6" id="line" role="tabpanel" aria-labelledby="line-tab">
+							<p id="ChartLineHeader" class="ChartTitle"></p>
+							<svg id="ChartLine" class="ChartArea" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400"></svg>
+							<div id="svgLine_tooltip" class="svgLine_tooltip"></div>
+							<img class="imgACTBGTLYLegend" src="img/ACTBGTLYlegend.png">
+						</div>
+						<div class="tab-pane fade col-lg-6" id="area" role="tabpanel" aria-labelledby="area-tab">
+							<p id="ChartAreaHeader" class="ChartTitle"></p>
+							<svg id="ChartArea" class="ChartArea" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 400"></svg>
+							<div id="svgArea_tooltip" class="svgArea_tooltip"></div>
+						</div>
+						<div class="tab-pane fade col-lg-6" id="pie" role="tabpanel" aria-labelledby="pie-tab">
+							<p id="ChartPieHeader" class="ChartTitle"></p>
+							<svg id="ChartPie" class="ChartArea" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 500"></svg>
+						</div>
+						
+						<div class="tab-pane fade col-lg-6" id="card" role="tabpanel" aria-labelledby="card-tab">
+
+						</div>
+						<svg id="legend" class="offset-lg-8 col-lg-4"></svg>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!-- jQuery CDN
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/jquery-3.3.1.min.js"></script>
+	<!-- jQuery Custom Scroller CDN
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/popper.min.js"></script>
+	<!-- Bootstrap Js CDN
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	-->
+	<script src="js/dist/bootstrap.min.js"></script>
+
+	<!-- D3 !v3.5-->
+	<script src="js/dist/d3.v3.5.min.js"></script>
+	<script src="js/dist/queue.v1.min.js"></script>
+	<!-- Working js-->
+	<script src="js/parameter.js"></script> <!--change year and month-->
+	<!--<script src="js/Air Accrual.js"></script>-->
+	<script src="js/Non Air Accrual.js"></script>
+
+        <script type="text/javascript">
+
+		   $(document).ready(function () {
+				// Sidebar control
+					$('#sidebarCollapse').on('click', function () {
+						$('#sidebar, #content').toggleClass('active');
+					});
+					$('#main').on('click', function () {
+						$('#sidebar, #content').addClass('active');
+					});
+					$('#legend').hide();
+				//Tab control
+					$('#line-tab').on('click', function () {
+					$('#legend').hide();
+					if (radioSel == 'Pillar') {
+						$('#Pillardiv').show();
+						$('#btnMktGroup').hide();
+						$('#PillarFinornonFindiv').hide();
+						} else {
+						$('#Pillardiv').hide();
+						$('#btnMktGroup').show();
+						$('#PillarFinornonFindiv').hide();
+						};
+						tabSel = 'Line';
+					});
+					$('#area-tab').on('click', function () {
+						$('#legend').show();
+						$('#Pillardiv').hide();
+						$('#btnMktGroup').hide();
+							if (radioSel == 'Pillar') {
+							$('#PillarFinornonFindiv').show();
+							} else {
+							$('#PillarFinornonFindiv').hide();
+							};
+						tabSel = 'Area';
+					});
+					$('#pie-tab').on('click', function () {
+						$('#legend').show();					
+						$('#Pillardiv').hide();
+						$('#btnMktGroup').hide();
+							if (radioSel == 'Pillar') {
+							$('#PillarFinornonFindiv').show();
+							} else {
+							$('#PillarFinornonFindiv').hide();
+							};
+						tabSel = 'Pie';
+					});
+					$('#table-tab').on('click', function () {
+					$('#legend').hide();
+					if (radioSel == 'Pillar') {
+						$('#Pillardiv').show();
+						$('#btnMktGroup').hide();
+						$('#PillarFinornonFindiv').hide();
+						} else {
+						$('#Pillardiv').hide();
+						$('#btnMktGroup').show();
+						$('#PillarFinornonFindiv').hide();
+						};
+						tabSel = 'Table';
+					});
+					
+					$('#card-tab').on('click', function () {
+						tabSel = 'Card';
+					});
+					
+					$('#Pillardiv').css("display","none");
+					$('#PillarFinornonFindiv').css("display","none");
+					
+				});
+
+		//Key Market button control
+			function ChangeMKT(obj) {
+				//Change Key Market
+				KeyMkt = obj.getAttribute('value');
+				//Change bottom color
+				document.getElementById("btnALL").classList.remove('active');
+				document.getElementById("btnHK").classList.remove('active');
+				document.getElementById("btnTW").classList.remove('active');
+				document.getElementById("btnMO").classList.remove('active');
+				document.getElementById("btnPRC").classList.remove('active');
+				document.getElementById("btnPRD").classList.remove('active');
+				document.getElementById("btnSEA").classList.remove('active');
+				document.getElementById("btnNA").classList.remove('active');
+				document.getElementById("btnOTH").classList.remove('active');
+				obj.classList.add('active');
+				Execute();
+				};
+		//Tab change
+			$('a[data-toggle="tab"]').on( 'shown.bs.tab', function() {
+				Execute();
+			});
+
+		//radio button control
+			function showbtnMktGroup(){
+				if(tabSel == 'Table' || tabSel == 'Line') {
+						$('#btnMktGroup').css("display","block");
+						$('#Pillardiv').css("display","none");
+						$('#PillarFinornonFindiv').css("display","none");
+					} else {
+						$('#btnMktGroup').css("display","none");
+						$('#Pillardiv').css("display","none");
+						$('#PillarFinornonFindiv').css("display","none");
+					}
+				radioSel = 'Market';
+				Execute();
+			}
+			function showPillar(){
+					if(tabSel == 'Table' || tabSel == 'Line') {
+						$('#btnMktGroup').css("display","none");
+						$('#Pillardiv').css("display","block");
+						$('#PillarFinornonFindiv').css("display","none");
+					} else {
+						$('#btnMktGroup').css("display","none");
+						$('#Pillardiv').css("display","none");
+						$('#PillarFinornonFindiv').css("display","block");
+					}
+				radioSel = 'Pillar';
+				Execute();
+			}
+			
+		
+        </script>
+
+    </body>
+</html>
