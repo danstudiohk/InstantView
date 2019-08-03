@@ -16,7 +16,7 @@
 ## Capabilities:
 ![alt text](https://github.com/danstudiohk/Project-InstantView/blob/master/img/Capability.JPG)
 
-### '<Overview>' Page using Card nature
+### `<Overview>` Page using Card nature
 ![alt text](https://github.com/danstudiohk/Project-InstantView/blob/master/img/Overview%20Page.JPG)
 
 ### Summary Page (Datatable)
