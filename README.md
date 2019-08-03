@@ -1,6 +1,7 @@
 # Project-InstantView
 - Simple, Instant Portable Reporting solution
 - Project in a loyalty programme
+- Based on d3.js framework
 
 ![alt text](https://github.com/danstudiohk/Project-InstantView/blob/master/img/Cover.JPG)
 
