@@ -1,6 +1,6 @@
 # Project-InstantView
 - Simple, Instant Portable Reporting solution
-- Project in a loyality programme
+- Project in a loyalty programme
 
 ![alt text](https://github.com/danstudiohk/Project-InstantView/blob/master/img/Cover.JPG)
 
