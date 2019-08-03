@@ -20,7 +20,7 @@
 ![alt text](https://github.com/danstudiohk/Project-InstantView/blob/master/img/Overview%20Page.JPG)
 
 ### `Summary` Page (Datatable)
-- High Level figure summary 
+- High Level figure summary  
 ![alt text](https://github.com/danstudiohk/Project-InstantView/blob/master/img/Datatable.JPG)
 ### `Trend` Page (Line chart)
 - With vs budget and last year  
